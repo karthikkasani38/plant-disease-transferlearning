@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('/static/images/background.jpeg'); /* Path to your background image */
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.8); /* Add a semi-transparent white background */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow effect */
+        }
+        h1 {
+            color: #333;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        img {
+            margin-bottom: 20px;
+            width: 338px; /* Set width to 300px */
+            height: 250px; /* Set height to 200px */
+            object-fit: cover; /* Maintain aspect ratio and cover container */
+            border-radius: 10px; /* Add border radius to images */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow effect */
+        }
+        p {
+            color: #666;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        .advisory {
+            font-style: italic;
+            color: red;
+            font-size: 1rem;
+        }
+        button {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease; /* Add smooth transition effect */
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Prediction Results</h1>
+        <img src="data:image/jpeg;base64,{{ image }}" alt="Uploaded Image">
+        <p>Predicted Disease: <span style="color: #4caf50;">{{ disease }}</span></p>
+        <p>Confidence: <span style="color: #333;">{{ confidence }}%</span></p>
+        <p class="advisory">Advisory: <span style="color: #b30000;">{{ advisory }}</span></p>
+        <br>
+        <a href="/" style="text-decoration: none;"><button>Upload New Image</button></a>
+    </div>
+</body>
+</html>
